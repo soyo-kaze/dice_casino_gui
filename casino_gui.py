@@ -97,7 +97,7 @@ class Casino(object):
                 self.bet.delete(0, "end")
                 tkMessageBox.showwarning("Money Alert", "Hey!! keep an eye on ur wallet!!")
                 
-            elif int(self.lastbet) < int(self.money)  and int(self.lastbet) > 0 :
+            elif int(self.lastbet) <= int(self.money)  and int(self.lastbet) > 0 :
                 if int(self.guess_1.get()) in range(1,7):
                     if int(self.guess_2.get()) in range(1,7):
                         if int(self.guess_2.get()) == int(self.random_no) or int(self.guess_1.get()) == int(self.random_no):
@@ -125,8 +125,12 @@ class Casino(object):
                     self.guess_1.delete(0, "end")
                     
             elif int(self.lastbet) == 0:
-                self.bet.delete(0, "end")
-                tkMessageBox.showwarning("Money Alert", "Don't try trick us!!")
+                if int(self.lastbet) == int(self.money):
+                    self.bet.delete(0, "end")
+                    tkMessageBox.showwarning("Money Alert", "You're broke as AF!!")
+                else:
+                    self.bet.delete(0, "end")
+                    tkMessageBox.showwarning("Money Alert", "Don't try trick us!!")
                 
             elif int(self.lastbet) < 0:
                 self.bet.delete(0, "end")
