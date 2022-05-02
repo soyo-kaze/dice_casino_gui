@@ -6,7 +6,7 @@ class Casino(object):
     def __init__(self):
         self.window_start = Tk()
         self.window_start.title("DICE CASINO")
-        self.window_start.iconbitmap(r'C:\Users\Sonu\Desktop\sameer\dice_casino_gui\Radiation.ico')
+        self.window_start.iconbitmap(r'.\Radiation.ico')
         
         self.frame_upper = Frame(self.window_start, width=100, height=50)
         self.frame_upper_1 = Frame(self.window_start, width=50, height=100)
@@ -152,7 +152,7 @@ class Casino(object):
         self.window_game = Tk()
         self.window_game.title("DICE CASINO")
         self.window_game.geometry("400x250")
-        self.window_game.iconbitmap(r'C:\Users\Sonu\Desktop\sameer\dice_casino_gui\Radiation.ico')
+        self.window_game.iconbitmap(r'.\Radiation.ico')
 
         
         if self.cost.get().isdigit() == True:
